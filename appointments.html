@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointments · Medicine Barber</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page appointments">
+    <header class="top-bar secondary">
+      <button class="icon-btn" aria-label="Go back" data-nav="back">
+        <span class="material-symbol">arrow_back</span>
+      </button>
+      <h1>Appointments</h1>
+      <button class="profile-btn" aria-label="Account">
+        <span class="material-symbol">person</span>
+      </button>
+    </header>
+
+    <section class="appointments-tabs">
+      <button class="appt-tab active" data-view="upcoming">Upcoming</button>
+      <button class="appt-tab" data-view="past">Past</button>
+    </section>
+
+    <section class="appointments-content">
+      <article class="empty-state" data-view="upcoming">
+        <h2>No appointments found</h2>
+        <p>
+          You don't have any upcoming appointments. Log in with the phone number you
+          used to book, or schedule a new visit below.
+        </p>
+        <button class="primary-btn book-btn" type="button">Book appointment</button>
+      </article>
+
+      <article class="empty-state hidden" data-view="past">
+        <h2>Nothing to show</h2>
+        <p>
+          Past appointments will appear here once you've completed a visit with Medicine
+          Barber.
+        </p>
+        <button class="primary-btn book-btn" type="button">Book again</button>
+      </article>
+    </section>
+
+    <div class="appointments-hero" aria-hidden="true"></div>
+
+    <nav class="bottom-nav">
+      <a href="index.html">
+        <span class="material-symbol">home</span>
+        <span>Home</span>
+      </a>
+      <a href="#locations">
+        <span class="material-symbol">location_on</span>
+        <span>Locations</span>
+      </a>
+      <button class="fab book-btn" aria-label="Book appointment">
+        <span class="material-symbol">add</span>
+      </button>
+      <a href="appointments.html" class="active-link">
+        <span class="material-symbol">calendar_month</span>
+        <span>Appointments</span>
+      </a>
+      <a href="#about">
+        <span class="material-symbol">info</span>
+        <span>About</span>
+      </a>
+    </nav>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
+

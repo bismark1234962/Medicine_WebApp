@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="220" viewBox="0 0 360 220">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#f1e8d7" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5dfb3" />
+      <stop offset="100%" stop-color="#c68d33" />
+    </linearGradient>
+  </defs>
+  <rect width="360" height="220" rx="32" fill="url(#bg)" stroke="#d7c6a1" stroke-width="3" />
+  <g stroke="url(#gold)" stroke-width="6" stroke-linecap="round">
+    <path d="M46 72h44v76H46c-18 0-28-11-28-32V104c0-21 10-32 28-32z" />
+    <path d="M314 72h-44v76h44c18 0 28-11 28-32V104c0-21-10-32-28-32z" />
+  </g>
+  <circle cx="180" cy="94" r="54" fill="none" stroke="url(#gold)" stroke-width="6" />
+  <path
+    d="M144 94c20-26 52-26 72 0-8 12-18 18-36 18s-28-6-36-18z"
+    fill="#1d1a16"
+  />
+  <path
+    d="M138 74c4-10 16-13 20-4 3 6-3 13-6 16-5-2-11-6-14-12zM222 74c-4-10-16-13-20-4-3 6 3 13 6 16 5-2 11-6 14-12z"
+    fill="#1d1a16"
+  />
+  <text
+    x="180"
+    y="42"
+    font-family="'Manrope', 'Segoe UI', sans-serif"
+    font-size="13"
+    text-anchor="middle"
+    fill="#a58445"
+    style="letter-spacing:6px"
+  >
+    TRADITIONAL CRAFT
+  </text>
+  <text
+    x="180"
+    y="154"
+    font-family="'Playfair Display', Georgia, serif"
+    font-size="40"
+    text-anchor="middle"
+    fill="#1c1a17"
+    style="letter-spacing:1px"
+  >
+    Medicine
+  </text>
+  <text
+    x="180"
+    y="188"
+    font-family="'Manrope', 'Segoe UI', sans-serif"
+    font-size="22"
+    text-anchor="middle"
+    fill="#1c1a17"
+    style="letter-spacing:10px"
+  >
+    BARBER
+  </text>
+</svg>
+

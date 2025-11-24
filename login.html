@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login · Medicine Barber</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page auth-page">
+    <header class="top-bar secondary">
+      <button class="icon-btn" aria-label="Go back" data-nav="back">
+        <span class="material-symbol">arrow_back</span>
+      </button>
+      <h1>Account access</h1>
+      <span class="top-bar-spacer"></span>
+    </header>
+
+    <main class="auth-container">
+      <section class="auth-panel">
+        <p class="auth-subtitle">
+          Log in or create a profile to manage bookings, reminders, and preferences.
+        </p>
+
+        <div class="auth-tabs" role="tablist">
+          <button class="auth-tab active" data-tab="login" role="tab" aria-selected="true">
+            Log in
+          </button>
+          <button class="auth-tab" data-tab="signup" role="tab" aria-selected="false">
+            Sign up
+          </button>
+        </div>
+
+        <form class="auth-form" data-form="login">
+          <label>Email
+            <input type="email" placeholder="you@email.com" required />
+          </label>
+          <label>Password
+            <input type="password" placeholder="••••••••" required />
+          </label>
+          <button class="primary-btn" type="submit">Log in</button>
+          <button class="link-btn" type="button">Forgot password?</button>
+        </form>
+
+        <form class="auth-form hidden" data-form="signup">
+          <label>Full name
+            <input type="text" placeholder="Enter your name" required />
+          </label>
+          <label>Email
+            <input type="email" placeholder="you@email.com" required />
+          </label>
+          <label>Phone number
+            <input type="tel" placeholder="+1 555 123 4567" required />
+          </label>
+          <label>Password
+            <input type="password" placeholder="Create a password" required />
+          </label>
+          <button class="primary-btn" type="submit">Create account</button>
+        </form>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="index.html">
+        <span class="material-symbol">home</span>
+        <span>Home</span>
+      </a>
+      <a href="appointments.html">
+        <span class="material-symbol">calendar_month</span>
+        <span>Appointments</span>
+      </a>
+      <button class="fab book-btn" aria-label="Book appointment">
+        <span class="material-symbol">add</span>
+      </button>
+      <a href="#services">
+        <span class="material-symbol">content_cut</span>
+        <span>Services</span>
+      </a>
+      <a href="#about">
+        <span class="material-symbol">info</span>
+        <span>About</span>
+      </a>
+    </nav>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
+

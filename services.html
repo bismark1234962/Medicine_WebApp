@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Services · Medicine Barber</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page services-page">
+    <header class="top-bar secondary">
+      <button class="icon-btn" aria-label="Go back" data-nav="back">
+        <span class="material-symbol">arrow_back</span>
+      </button>
+      <h1>Services</h1>
+      <button class="profile-btn" aria-label="Account">
+        <span class="material-symbol">person</span>
+      </button>
+    </header>
+
+    <section class="services-hero">
+      <div class="overlay-card">
+        <p class="label">Studio hours</p>
+        <h2>Monday – Sunday</h2>
+        <ul>
+          <li><span>Mon · Wed · Thu · Fri · Sat:</span> 8:00 AM – 9:00 PM</li>
+          <li><span>Sunday:</span> 2:00 PM – 9:00 PM</li>
+          <li><span>Off day:</span> Tuesday (rest & training)</li>
+        </ul>
+        <p class="note">Walk-ins welcome, but appointments guarantee your chair.</p>
+      </div>
+    </section>
+
+    <main class="services-list">
+      <section class="service-section">
+        <h3>Haircuts & styling</h3>
+        <article class="service-card">
+          <div>
+            <h4>Signature fade</h4>
+            <p>Fresh fade with crisp lines and a powder finish to keep you sharp.</p>
+          </div>
+          <div class="meta">
+            <span class="price">GH₵30</span>
+            <span class="duration">45 min</span>
+          </div>
+        </article>
+        <article class="service-card">
+          <div>
+            <h4>Classic gentleman cut</h4>
+            <p>Full haircut, combed style, and a hot towel to close the pores.</p>
+          </div>
+          <div class="meta">
+            <span class="price">GH₵35</span>
+            <span class="duration">50 min</span>
+          </div>
+        </article>
+        <article class="service-card">
+          <div>
+            <h4>Kids cut (12 & under)</h4>
+            <p>Gentle cut with extra patience so the young kings feel relaxed.</p>
+          </div>
+          <div class="meta">
+            <span class="price">GH₵22</span>
+            <span class="duration">35 min</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="service-section">
+        <h3>Beard & shave</h3>
+        <article class="service-card">
+          <div>
+            <h4>Beard sculpt + hot towel</h4>
+            <p>Shape up, trim, and steam towel to keep the beard soft and neat.</p>
+          </div>
+          <div class="meta">
+            <span class="price">GH₵25</span>
+            <span class="duration">30 min</span>
+          </div>
+        </article>
+        <article class="service-card">
+          <div>
+            <h4>Traditional razor shave</h4>
+            <p>Steam prep, close razor shave, and a cool balm to calm the skin.</p>
+          </div>
+          <div class="meta">
+            <span class="price">GH₵28</span>
+            <span class="duration">35 min</span>
+          </div>
+        </article>
+        <article class="service-card">
+          <div>
+            <h4>Full service combo</h4>
+            <p>Haircut and beard in one sitting so you leave ready for any event.</p>
+          </div>
+          <div class="meta">
+            <span class="price">GH₵55</span>
+            <span class="duration">80 min</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="service-section spotlight">
+        <div class="spotlight-card">
+          <div class="rotating-scissors" aria-hidden="true">
+            <span class="material-symbol">content_cut</span>
+          </div>
+          <div>
+            <p class="label">Fresh every cut</p>
+            <h3>Precision in motion</h3>
+            <p>
+              Medicine treats every head like a canvas. Lock in a time, sit back, and watch
+              the blend come together.
+            </p>
+            <button class="primary-btn book-btn" type="button">Book a cut</button>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="index.html">
+        <span class="material-symbol">home</span>
+        <span>Home</span>
+      </a>
+      <a href="appointments.html">
+        <span class="material-symbol">calendar_month</span>
+        <span>Appointments</span>
+      </a>
+      <button class="fab book-btn" aria-label="Book appointment">
+        <span class="material-symbol">add</span>
+      </button>
+      <a href="services.html" class="active-link">
+        <span class="material-symbol">content_cut</span>
+        <span>Services</span>
+      </a>
+      <a href="barbers.html">
+        <span class="material-symbol">face</span>
+        <span>Barbers</span>
+      </a>
+    </nav>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
+

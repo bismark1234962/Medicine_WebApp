@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Barber · Medicine Barber</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="page barbers-page">
+    <header class="top-bar secondary">
+      <button class="icon-btn" aria-label="Go back" data-nav="back">
+        <span class="material-symbol">arrow_back</span>
+      </button>
+      <h1>Barbers</h1>
+      <button class="profile-btn" aria-label="Account">
+        <span class="material-symbol">person</span>
+      </button>
+    </header>
+
+    <main class="barber-profile">
+      <section class="barber-card">
+        <div class="barber-photo">
+          <img src="barber.jpg" alt="Lead barber" />
+        </div>
+        <div class="barber-details">
+          <p class="label">Lead barber</p>
+          <h2>Medicine Barber</h2>
+          <p class="bio">
+            Precision cuts, fades, beard sculpts, and classic shaves. Medicine brings
+            over 12 years of craft to every visit with an eye for detail and a calm,
+            welcoming vibe.
+          </p>
+          <ul class="highlights">
+            <li><span class="material-symbol">star</span> 5-star client rating</li>
+            <li>
+              <span class="material-symbol">schedule</span>
+              Available Mon – Sun (off on Tuesday)
+            </li>
+            <li><span class="material-symbol">bolt</span> Specializes in modern fades</li>
+          </ul>
+          <button class="primary-btn book-btn" type="button">Book with Medicine</button>
+        </div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <a href="index.html">
+        <span class="material-symbol">home</span>
+        <span>Home</span>
+      </a>
+      <a href="appointments.html">
+        <span class="material-symbol">calendar_month</span>
+        <span>Appointments</span>
+      </a>
+      <button class="fab book-btn" aria-label="Book appointment">
+        <span class="material-symbol">add</span>
+      </button>
+      <a href="barbers.html" class="active-link">
+        <span class="material-symbol">face</span>
+        <span>Barbers</span>
+      </a>
+      <a href="#about">
+        <span class="material-symbol">info</span>
+        <span>About</span>
+      </a>
+    </nav>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
+
