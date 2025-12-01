@@ -18,11 +18,22 @@
   </head>
   <body class="page appointments">
     <header class="top-bar secondary">
-      <button class="icon-btn" aria-label="Go back" data-nav="back">
+      <button
+        class="icon-btn"
+        aria-label="Go back"
+        data-nav="back"
+        type="button"
+        onclick="if (window.history.length > 1) { window.history.back(); } else { window.location.href='index.html'; }"
+      >
         <span class="material-symbol">arrow_back</span>
       </button>
       <h1>Appointments</h1>
-      <button class="profile-btn" aria-label="Account">
+      <button
+        class="profile-btn"
+        aria-label="Account"
+        type="button"
+        onclick="window.location.href='login.html'"
+      >
         <span class="material-symbol">person</span>
       </button>
     </header>
@@ -33,7 +44,12 @@
     </section>
 
     <section class="appointments-content">
-      <article class="empty-state" data-view="upcoming">
+      <!-- Appointments List Container -->
+      <div class="appointments-list" id="upcomingAppointments" data-view="upcoming"></div>
+      <div class="appointments-list hidden" id="pastAppointments" data-view="past"></div>
+
+      <!-- Empty States -->
+      <article class="empty-state" data-view="upcoming" id="upcomingEmpty">
         <h2>No appointments found</h2>
         <p>
           You don't have any upcoming appointments. Log in with the phone number you
@@ -42,7 +58,7 @@
         <button class="primary-btn book-btn" type="button">Book appointment</button>
       </article>
 
-      <article class="empty-state hidden" data-view="past">
+      <article class="empty-state hidden" data-view="past" id="pastEmpty">
         <h2>Nothing to show</h2>
         <p>
           Past appointments will appear here once you've completed a visit with Medicine
@@ -51,6 +67,85 @@
         <button class="primary-btn book-btn" type="button">Book again</button>
       </article>
     </section>
+
+    <!-- Booking Modal -->
+    <div class="booking-modal hidden" id="bookingModal">
+      <div class="modal-overlay" id="modalOverlay"></div>
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Book an appointment</h2>
+          <button class="icon-btn close-modal" aria-label="Close">
+            <span class="material-symbol">close</span>
+          </button>
+        </div>
+        <form id="bookingForm" class="booking-form">
+          <div class="form-group">
+            <label for="serviceSelect">Service</label>
+            <select id="serviceSelect" required>
+              <option value="">Select a service</option>
+              <option value="Signature fade">Signature fade - GH₵30 (45 min)</option>
+              <option value="Classic gentleman cut">Classic gentleman cut - GH₵35 (50 min)</option>
+              <option value="Kids cut (12 & under)">Kids cut (12 & under) - GH₵22 (35 min)</option>
+              <option value="Beard sculpt + hot towel">Beard sculpt + hot towel - GH₵25 (30 min)</option>
+              <option value="Traditional razor shave">Traditional razor shave - GH₵28 (35 min)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="barberSelect">Barber</label>
+            <select id="barberSelect" required>
+              <option value="">Select a barber</option>
+              <option value="Medicine Barber">Medicine Barber</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="dateInput">Date</label>
+            <input type="date" id="dateInput" required />
+          </div>
+
+          <div class="form-group">
+            <label for="timeInput">Time</label>
+            <select id="timeInput" required>
+              <option value="">Select a time</option>
+              <option value="08:00">8:00 AM</option>
+              <option value="08:30">8:30 AM</option>
+              <option value="09:00">9:00 AM</option>
+              <option value="09:30">9:30 AM</option>
+              <option value="10:00">10:00 AM</option>
+              <option value="10:30">10:30 AM</option>
+              <option value="11:00">11:00 AM</option>
+              <option value="11:30">11:30 AM</option>
+              <option value="12:00">12:00 PM</option>
+              <option value="12:30">12:30 PM</option>
+              <option value="13:00">1:00 PM</option>
+              <option value="13:30">1:30 PM</option>
+              <option value="14:00">2:00 PM</option>
+              <option value="14:30">2:30 PM</option>
+              <option value="15:00">3:00 PM</option>
+              <option value="15:30">3:30 PM</option>
+              <option value="16:00">4:00 PM</option>
+              <option value="16:30">4:30 PM</option>
+              <option value="17:00">5:00 PM</option>
+              <option value="17:30">5:30 PM</option>
+              <option value="18:00">6:00 PM</option>
+              <option value="18:30">6:30 PM</option>
+              <option value="19:00">7:00 PM</option>
+              <option value="19:30">7:30 PM</option>
+              <option value="20:00">8:00 PM</option>
+              <option value="20:30">8:30 PM</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="notesInput">Notes (optional)</label>
+            <textarea id="notesInput" placeholder="Any special requests or notes..." rows="3"></textarea>
+          </div>
+
+          <button type="submit" class="primary-btn" id="submitBooking">Confirm booking</button>
+        </form>
+      </div>
+    </div>
 
     <div class="appointments-hero" aria-hidden="true"></div>
 
@@ -76,6 +171,21 @@
       </a>
     </nav>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    
+    <!-- Firebase Configuration -->
+    <script src="firebase-config.js"></script>
+    
+    <!-- Auth Module -->
+    <script src="auth.js"></script>
+    
+    <!-- Appointments DB Module -->
+    <script src="appointments-db.js"></script>
+    
     <script src="scripts.js"></script>
   </body>
 </html>

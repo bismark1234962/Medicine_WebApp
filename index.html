@@ -19,7 +19,12 @@
   <body>
     <header class="top-bar">
       <h1>Welcome</h1>
-      <button class="profile-btn" aria-label="Account">
+      <button
+        class="profile-btn"
+        aria-label="Account"
+        type="button"
+        onclick="window.location.href='login.html'"
+      >
         <span class="material-symbol">person</span>
       </button>
     </header>
@@ -40,7 +45,11 @@
     </main>
 
     <section class="action-list">
-      <a class="action-card" href="appointments.html">
+      <a
+        class="action-card"
+        href="appointments.html"
+        onclick="return requireAuth(event, 'appointments.html')"
+      >
         <div class="icon">
           <span class="material-symbol">event</span>
         </div>
@@ -51,7 +60,11 @@
         <span class="material-symbol arrow">chevron_right</span>
       </a>
 
-      <a class="action-card" href="barbers.html">
+      <a
+        class="action-card"
+        href="barbers.html"
+        onclick="return requireAuth(event, 'barbers.html')"
+      >
         <div class="icon">
           <span class="material-symbol">face</span>
         </div>
@@ -62,7 +75,11 @@
         <span class="material-symbol arrow">chevron_right</span>
       </a>
 
-      <a class="action-card" href="services.html">
+      <a
+        class="action-card"
+        href="services.html"
+        onclick="return requireAuth(event, 'services.html')"
+      >
         <div class="icon">
           <span class="material-symbol">content_cut</span>
         </div>
@@ -79,14 +96,20 @@
         <span class="material-symbol">home</span>
         <span>Home</span>
       </a>
-      <a href="locations.html">
+      <a
+        href="locations.html"
+        onclick="return requireAuth(event, 'locations.html')"
+      >
         <span class="material-symbol">location_on</span>
         <span>Locations</span>
       </a>
       <button class="fab" aria-label="Quick book">
         <span class="material-symbol">add</span>
       </button>
-      <a href="#services">
+      <a
+        href="services.html"
+        onclick="return requireAuth(event, 'services.html')"
+      >
         <span class="material-symbol">content_cut</span>
         <span>Services</span>
       </a>
@@ -96,6 +119,21 @@
       </a>
     </nav>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    
+    <!-- Firebase Configuration -->
+    <script src="firebase-config.js"></script>
+    
+    <!-- Auth Module -->
+    <script src="auth.js"></script>
+    
+    <!-- Appointments DB Module -->
+    <script src="appointments-db.js"></script>
+    
     <script src="scripts.js"></script>
   </body>
 </html>

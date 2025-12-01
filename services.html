@@ -18,11 +18,22 @@
   </head>
   <body class="page services-page">
     <header class="top-bar secondary">
-      <button class="icon-btn" aria-label="Go back" data-nav="back">
+      <button
+        class="icon-btn"
+        aria-label="Go back"
+        data-nav="back"
+        type="button"
+        onclick="if (window.history.length > 1) { window.history.back(); } else { window.location.href='index.html'; }"
+      >
         <span class="material-symbol">arrow_back</span>
       </button>
       <h1>Services</h1>
-      <button class="profile-btn" aria-label="Account">
+      <button
+        class="profile-btn"
+        aria-label="Account"
+        type="button"
+        onclick="window.location.href='login.html'"
+      >
         <span class="material-symbol">person</span>
       </button>
     </header>
@@ -133,23 +144,38 @@
         <span class="material-symbol">home</span>
         <span>Home</span>
       </a>
-      <a href="appointments.html">
+      <a href="appointments.html" class="requires-auth">
         <span class="material-symbol">calendar_month</span>
         <span>Appointments</span>
       </a>
       <button class="fab book-btn" aria-label="Book appointment">
         <span class="material-symbol">add</span>
       </button>
-      <a href="services.html" class="active-link">
+      <a href="services.html" class="active-link requires-auth">
         <span class="material-symbol">content_cut</span>
         <span>Services</span>
       </a>
-      <a href="barbers.html">
+      <a href="barbers.html" class="requires-auth">
         <span class="material-symbol">face</span>
         <span>Barbers</span>
       </a>
     </nav>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    
+    <!-- Firebase Configuration -->
+    <script src="firebase-config.js"></script>
+    
+    <!-- Auth Module -->
+    <script src="auth.js"></script>
+    
+    <!-- Appointments DB Module -->
+    <script src="appointments-db.js"></script>
+    
     <script src="scripts.js"></script>
   </body>
 </html>

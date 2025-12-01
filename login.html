@@ -18,7 +18,13 @@
   </head>
   <body class="page auth-page">
     <header class="top-bar secondary">
-      <button class="icon-btn" aria-label="Go back" data-nav="back">
+      <button
+        class="icon-btn"
+        aria-label="Go back"
+        data-nav="back"
+        type="button"
+        onclick="if (window.history.length > 1) { window.history.back(); } else { window.location.href='index.html'; }"
+      >
         <span class="material-symbol">arrow_back</span>
       </button>
       <h1>Account access</h1>
@@ -32,10 +38,24 @@
         </p>
 
         <div class="auth-tabs" role="tablist">
-          <button class="auth-tab active" data-tab="login" role="tab" aria-selected="true">
+          <button
+            class="auth-tab active"
+            data-tab="login"
+            role="tab"
+            aria-selected="true"
+            type="button"
+            onclick="switchAuthTab('login')"
+          >
             Log in
           </button>
-          <button class="auth-tab" data-tab="signup" role="tab" aria-selected="false">
+          <button
+            class="auth-tab"
+            data-tab="signup"
+            role="tab"
+            aria-selected="false"
+            type="button"
+            onclick="switchAuthTab('signup')"
+          >
             Sign up
           </button>
         </div>
@@ -45,7 +65,16 @@
             <input type="email" placeholder="you@email.com" required />
           </label>
           <label>Password
-            <input type="password" placeholder="••••••••" required />
+            <div class="password-field">
+              <input id="loginPassword" type="password" placeholder="••••••••" required />
+            </div>
+            <label class="show-password-label">
+              <span>Show password</span>
+              <input
+                type="checkbox"
+                onchange="togglePassword('loginPassword', this.checked)"
+              />
+            </label>
           </label>
           <button class="primary-btn" type="submit">Log in</button>
           <button class="link-btn" type="button">Forgot password?</button>
@@ -59,10 +88,24 @@
             <input type="email" placeholder="you@email.com" required />
           </label>
           <label>Phone number
-            <input type="tel" placeholder="+1 555 123 4567" required />
+            <input type="tel" placeholder="+233 54 140 9060" required />
           </label>
           <label>Password
-            <input type="password" placeholder="Create a password" required />
+            <div class="password-field">
+              <input
+                id="signupPassword"
+                type="password"
+                placeholder="Create a password"
+                required
+              />
+            </div>
+            <label class="show-password-label">
+              <span>Show password</span>
+              <input
+                type="checkbox"
+                onchange="togglePassword('signupPassword', this.checked)"
+              />
+            </label>
           </label>
           <button class="primary-btn" type="submit">Create account</button>
         </form>
@@ -91,6 +134,45 @@
       </a>
     </nav>
 
+    <script>
+      function switchAuthTab(target) {
+        const tabs = document.querySelectorAll('.auth-tab');
+        const forms = document.querySelectorAll('.auth-form');
+
+        tabs.forEach((tab) => {
+          const isActive = tab.dataset.tab === target;
+          tab.classList.toggle('active', isActive);
+          tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+        });
+
+        forms.forEach((form) => {
+          const isTarget = form.dataset.form === target;
+          form.classList.toggle('hidden', !isTarget);
+        });
+      }
+
+      function togglePassword(inputId, isChecked) {
+        const input = document.getElementById(inputId);
+        if (!input) return;
+        input.type = isChecked ? 'text' : 'password';
+      }
+    </script>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+    
+    <!-- Firebase Configuration -->
+    <script src="firebase-config.js"></script>
+    
+    <!-- Auth Module -->
+    <script src="auth.js"></script>
+    
+    <!-- Appointments DB Module -->
+    <script src="appointments-db.js"></script>
+    
     <script src="scripts.js"></script>
   </body>
 </html>
